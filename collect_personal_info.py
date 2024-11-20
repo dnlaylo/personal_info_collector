@@ -3,6 +3,8 @@ with open("personal_info.txt", "a") as file:
     # Loop for new inputs
     while True:
         # Ask for entries (name, age, address, contact no., email)
+        print("\nEnter the following information:\n")
+
         full_name = input("Full Name: ")
         
         # Ask age until true/valid
@@ -50,3 +52,15 @@ with open("personal_info.txt", "a") as file:
         elif another == "no":
             print(f"\nData saved.")
             break
+         # If input is neither 'yes' nor 'no', Loop until input is true/valid
+        else:
+            while True:
+                try_again = input("Try again. (yes/no): ").lower()
+
+                if try_again == "yes":
+                    break
+                elif try_again == "no":
+                    print(f"\nData saved.")
+                    exit()
+                else:
+                    print("Please input a valid answer.")
