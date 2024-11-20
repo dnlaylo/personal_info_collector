@@ -1,5 +1,6 @@
 # Open file and let the existing file append inputs and not override by using 'a'
 with open("personal_info.txt", "a") as file:
+    # Loop for new inputs
     while True:
         # Ask for entries (name, age, address, contact no., email)
         full_name = input("Full Name: ")
@@ -14,6 +15,7 @@ with open("personal_info.txt", "a") as file:
         file.write(f"Contact Number: {contact}\n")
         file.write(f"Address: {address}\n")
         file.write(f"Email: {email}\n")
+        file.write("-----\n") # Separator for new data
 
         # Ask for a new input
         another = input("\nDo you want to add another person? (yes/no): ").lower()
