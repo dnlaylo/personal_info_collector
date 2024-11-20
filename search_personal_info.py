@@ -20,3 +20,6 @@ while True:
             if line.strip() == "-----": # Separator line
                 break
             print('\n', line.strip())
+
+    if not found:
+        print("\nInformation not found.")
