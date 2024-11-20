@@ -23,3 +23,23 @@ while True:
 
     if not found:
         print("\nInformation not found.")
+
+    # Ask for another search
+    another = input("\nDo you want to search for another name? (yes/no): ").strip().lower()
+    if another == "yes":
+        continue
+    elif another == "no":
+        print(f"\nExiting Program.")
+        break
+    else:
+        while True:
+            try_again = input("Try again. (yes/no): ").lower()
+
+            if try_again == "yes":
+                break
+            elif try_again == "no":
+                print(f"\nExiting Program.")
+                exit()
+            else:
+                print("Please input a valid answer.")
+
