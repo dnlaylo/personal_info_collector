@@ -4,10 +4,36 @@ with open("personal_info.txt", "a") as file:
     while True:
         # Ask for entries (name, age, address, contact no., email)
         full_name = input("Full Name: ")
-        age = int(input("Age: "))
-        contact = input("Contact Number: ")
+        
+        # Ask age until true/valid
+        while True:
+            try:
+                age = int(input("Age: "))
+                break
+            except:
+                print("Input is not an integer.") 
+
+        # Ask contact no. until length is equal to 11 and are integers/digits
+        while True:
+            try:
+                contact = input("Contact Number: ")
+                if len(contact) != 11 or not contact.isdigit():
+                    raise
+                break
+            except:
+                print("Should be 11 digits.") 
+
         address = input("Address: ")
-        email = input("Email: ")
+
+        # Ask email until it has a domain (contains '@' and '.')
+        while True:
+            try:
+                email = input("Email: ")
+                if '@' not in email or '.' not in email:
+                    raise
+                break
+            except:
+                print("Must be an email address. Make sure email domain is included ('@example.com').") 
 
         # Write the inputs to the file respectively
         file.write(f"Full Name: {full_name}\n")
