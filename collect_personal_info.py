@@ -1,4 +1,17 @@
 # Open file and let the existing file append inputs and not override by using 'a'
-# Ask for entries (name, age, address, contact no., email)
+with open("personal_info.txt", "a") as file:
+    # Ask for entries (name, age, address, contact no., email)
+    full_name = input("Full Name: ")
+    age = int(input("Age: "))
+    contact = input("Contact Number: ")
+    address = input("Address: ")
+    email = input("Email: ")
+
 # Write the inputs to the file respectively
+    file.write(f"Full Name: {full_name}\n")
+    file.write(f"Age: {age}\n")
+    file.write(f"Contact Number: {contact}\n")
+    file.write(f"Address: {address}\n")
+    file.write(f"Email: {email}\n")
+    
 # Ask for a new input
