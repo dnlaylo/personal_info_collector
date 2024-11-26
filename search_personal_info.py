@@ -46,3 +46,5 @@ try:
 
 except FileNotFoundError:
     print("File does not exist.")
+
+# A reference code: https://python.plainenglish.io/what-is-linear-search-in-python-23bd2170f1a5
